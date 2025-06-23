@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             InteropSeeder::class,
             PengembanganSeeder::class,
             KeamananSeeder::class,
+            DataSeeder::class,
         ]);
     }
 }

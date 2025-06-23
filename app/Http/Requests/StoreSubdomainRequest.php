@@ -25,9 +25,16 @@ class StoreSubdomainRequest extends FormRequest
             'url' => ['required', 'url:http,https', 'max:255'],
             'status' => ['required'],
             'op_teknis' => ['nullable', 'string', 'max:255'],
-            'kontak_teknis' => ['nullable', 'digits_between:9,14', 'max:255'],
+            'kontak_teknis' => ['nullable', 'regex:/^[0-9]{9,14}$/'],
             'opd_id' => ['required', 'max:255'],
             'keterangan' => ['nullable', 'string', 'max:255'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'kontak_teknis.regex' => 'Nomor kontak hanya boleh berupa angka dan panjangnya antara 9 sampai 14 digit.',
         ];
     }
 }

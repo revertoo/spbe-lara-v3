@@ -90,7 +90,7 @@
                                                     @if ($subdomain->keterangan)
                                                         {{ $subdomain->keterangan }}
                                                     @else
-                                                        -
+                                                        <span class="text-muted">-</span>
                                                     @endif
                                                 </td>
                                             </tr>
