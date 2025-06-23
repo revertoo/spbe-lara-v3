@@ -79,6 +79,10 @@
                                         role="tab" aria-controls="keamananApp" aria-selected="false">Keamanan</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" id="dataApp-tab" data-toggle="tab" href="#dataApp" role="tab"
+                                        aria-controls="dataApp" aria-selected="false">Data</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" id="monevApp-tab" data-toggle="tab" href="#monevApp" role="tab"
                                         aria-controls="monevApp" aria-selected="false">Monev Aplikasi</a>
                                 </li>
@@ -218,6 +222,9 @@
                                 <div class="tab-pane fade" id="interoperabilitas" role="tabpanel"
                                     aria-labelledby="interoperabilitas-tab">
                                     @include('interop.interop-index')
+                                </div>
+                                <div class="tab-pane fade" id="dataApp" role="tabpanel" aria-labelledby="dataApp-tab">
+                                    @include('data.data-index')
                                 </div>
                             </div>
                         </div>

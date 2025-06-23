@@ -75,7 +75,9 @@
                                         name="opd_id" required autocomplete="opd_id">
                                         <option value="">-</option>
                                         @forelse ($opds as $opd)
-                                            <option value="{{ $opd['id'] }}">{{ $opd['nama'] }}</option>
+                                            <option value="{{ $opd['id'] }}"
+                                                {{ old('opd_id') == $opd['id'] ? 'selected' : '' }}>
+                                                {{ $opd['nama'] }}</option>
                                         @empty
                                             <option value="">Tidak Ada Data</option>
                                         @endforelse

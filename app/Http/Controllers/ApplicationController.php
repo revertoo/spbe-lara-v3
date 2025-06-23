@@ -8,6 +8,7 @@ use App\Http\Requests\StoreApplicationRequest;
 use App\Http\Requests\StoreFullApplicationRequest; //new class for multiple insert table requests
 use App\Http\Requests\UpdateApplicationRequest;
 use App\Models\Bahasaprogram;
+use App\Models\Data;
 use App\Models\Frameworkapp;
 use App\Models\Interop;
 use App\Models\Katapp;
@@ -15,6 +16,7 @@ use App\Models\Katdb;
 use App\Models\Katpengguna;
 use App\Models\Katplatform;
 use App\Models\Katserver;
+use App\Models\Keamanan;
 use App\Models\Layananapp;
 use App\Models\Monevapp;
 use App\Models\Opd;
@@ -177,8 +179,10 @@ class ApplicationController extends Controller
         $sdmteknics = Sdmteknic::where('application_id', $application->id)->get();
         $interops = Interop::where('application_id', $application->id)->get();
         $pengembangans = Pengembangan::where('application_id', $application->id)->orderBy('tahun_pengembangan', 'desc')->get();
+        $keamanans = Keamanan::where('application_id', $application->id)->get();
+        $datas = Data::where('application_id', $application->id)->get();
 
-        return view('aplikasi.aplikasi-detail', compact('application', 'monevapps', 'sdmteknics', 'interops', 'pengembangans'), [
+        return view('aplikasi.aplikasi-detail', compact('application', 'monevapps', 'sdmteknics', 'interops', 'pengembangans', 'keamanans', 'datas'), [
             'title' => 'Data Aplikasi'
         ]);
     }
