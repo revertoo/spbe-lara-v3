@@ -70,6 +70,9 @@
 
     <!-- Additional JS (if any) -->
     @stack('scripts')
+
+    <!-- Modal Stack -->
+    @stack('modals')
 </body>
 
 </html>

@@ -20,14 +20,28 @@ class PengembanganController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Application $application)
-    {
-        // $pengembangans = Pengembangan::where('application_id', $application->id)->get();
+    // public function index(Application $application)
+    // {
+    //     // $pengembangans = Pengembangan::where('application_id', $application->id)->get();
 
-        // return view('pengembangan.pengembangan-index', compact('application', 'pengembangans'), [
-        //     'title' => 'Pengembangan Aplikasi'
-        // ]);
+    //     // return view('pengembangan.pengembangan-index', compact('application', 'pengembangans'), [
+    //     //     'title' => 'Pengembangan Aplikasi'
+    //     // ]);
+    // }
+
+    public function index() {
+    $pengembangans = Pengembangan::with([
+            'application',
+            'platform',
+            'database',
+            'bahasaprogram',
+            'framework',
+            'user'
+        ])->get();
+
+        return view('pengembangan.pengembanganindex', compact('pengembangans'));
     }
+
 
     /**
      * Show the form for creating a new resource.
