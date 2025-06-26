@@ -114,6 +114,45 @@
                         </div>
                         <div class="mb-3"><strong>Diinput Oleh:</strong> {{ $pengembangan->user->name ?? '-' }}</div>
                     </div>
+
+                    <hr>
+                        <ul class="nav nav-tabs px-3" id="tabDetail{{ $pengembangan->id }}" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="vendor-tab{{ $pengembangan->id }}" data-toggle="tab"
+                                href="#vendor{{ $pengembangan->id }}" role="tab" aria-controls="vendor" aria-selected="true">Vendor</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="staging1-tab" data-toggle="tab"
+                                href="#staging1{{ $pengembangan->id }}" role="tab" aria-controls="staging1" aria-selected="false">Staging1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="staging2-tab" data-toggle="tab"
+                                href="#staging2{{ $pengembangan->id }}" role="tab" aria-controls="staging2" aria-selected="false">Staging2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="staging3-tab" data-toggle="tab"
+                                href="#staging3{{ $pengembangan->id }}" role="tab" aria-controls="staging3" aria-selected="false">Staging3</a>
+                            </li>
+                        </ul>
+                    <div class="tab-content pt-3 px-3" id="tabContentDetail{{ $pengembangan->id }}">
+                        
+                    
+                    <div class="tab-pane fade" id="staging1{{ $pengembangan->id }}" role="tabpanel"
+                        aria-labelledby="staging1-tab">
+                        <p>Lorem ipsum dolor amet awikwok loerm ipsum dolor amet</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="staging2{{ $pengembangan->id }}" role="tabpanel"
+                        aria-labelledby="staging2-tab">
+                        <p>Lorem ipsum dolor amet awikwok loerm ipsum dolor amet</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="staging3{{ $pengembangan->id }}" role="tabpanel"
+                        aria-labelledby="staging3-tab">
+                        <p>Lorem ipsum dolor amet awikwok loerm ipsum dolor amet</p>
+                    </div>
+                </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     </div>
