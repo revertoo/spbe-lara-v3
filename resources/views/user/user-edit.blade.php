@@ -60,7 +60,7 @@
                                 <div class="form-group col-md-6 col-12">
                                     <label>{{ __('Passsword') }}</label>
                                     <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                        name="password" value="{{ old('password') }}" autocomplete="password"
+                                        name="password" value="" autocomplete="password"
                                         placeholder="{{ __('Password') }}">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -72,8 +72,8 @@
                                     <label>{{ __('Konfirmasi Passsword') }}</label>
                                     <input type="password"
                                         class="form-control @error('confirm_password') is-invalid @enderror"
-                                        name="confirm_password" value="{{ old('confirm_password') }}"
-                                        autocomplete="confirm_password" placeholder="{{ __('Konfirmasi Password') }}">
+                                        name="confirm_password" value="" autocomplete="confirm_password"
+                                        placeholder="{{ __('Konfirmasi Password') }}">
                                     @error('confirm_password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

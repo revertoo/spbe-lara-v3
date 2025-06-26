@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sdmpengembangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('application_id')->constrained()->onDelete('cascade');
+            $table->foreignId('pengembangan_id')->constrained()->onDelete('cascade');
             $table->string('nama_pengembang');
             $table->text('alamat_pengembang')->nullable();
             $table->string('nohp_pengembang');

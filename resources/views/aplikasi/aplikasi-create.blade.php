@@ -313,7 +313,9 @@
                                 <div class="card-body">
                                     <input type="hidden" name="user_id"
                                         value="{{ old('user_id', auth()->user()->id) }}" required readonly>
+                                    <input type="hidden" id="tahun_pengembangan" name="tahun_pengembangan" value="{{ old('tahun_buat') }}">
 
+<<<<<<< HEAD
                                     <!-- <div class="form-group col-md-2 col-12">
                                         <label>{{ __('Tahun Pengembangan') }}</label>
                                         {{-- Tahun Pengembangan --}}
@@ -333,6 +335,8 @@
                                             </span>
                                         @enderror
                                     </div> -->
+=======
+>>>>>>> b02e2d1f6f8b44b41b9c92108e8219b42c1e8da8
                                     <div id="riwayat_pengembangan" class="form-group col-md-8 col-12">
                                         <label>{{ __('Riwayat Pengembangan') }}</label>
                                         <textarea class="form-control @error('riwayat_pengembangan') is-invalid @enderror" name="riwayat_pengembangan"

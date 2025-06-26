@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($keamanans as $keamanan)
+            @forelse ($keamanans as $keamanan) 
                 <tr>
                     <td>
                         <a href="{{ route('admin.keamanan.edit', ['application' => $application->id, 'keamanan' => $keamanan->id]) }}"

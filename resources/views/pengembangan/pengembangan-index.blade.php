@@ -135,7 +135,61 @@
                             </li>
                         </ul>
                     <div class="tab-content pt-3 px-3" id="tabContentDetail{{ $pengembangan->id }}">
-                        
+                    
+                    <div class="tab-pane fade show active" id="vendor{{ $pengembangan->id }}" role="tabpanel"
+                        aria-labelledby="vendor-tab{{ $pengembangan->id }}">
+                        <!-- TABEL VENDOR -->
+                        <div class="table-responsive">
+
+                            <a href="###" class="btn btn-primary mb-3">
+                                <i class="fas fa-plus"></i> Add Vendor
+                            </a>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Action</th>
+                                        <th>Nama Pengembang</th>
+                                        <th>Alamat</th>
+                                        <th>No HP</th>
+                                        <th>No Kantor</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($pengembangan->sdmpengembang as $i => $sdm)
+                                        <tr>
+                                            <td>{{ $i + 1 }}</td>
+                                            <td style="white-space: nowrap; text-align: center;">
+                                                <a href="#"
+                                                    class="btn btn-light btn-sm" title="Edit">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <form
+                                                    action="#"
+                                                    method="POST" style="display: inline-block;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-light btn-sm show_confirm" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                            <td>{{ $sdm->nama_pengembang }}</td>
+                                            <td>{{ $sdm->alamat_pengembang }}</td>
+                                            <td>{{ $sdm->nohp_pengembang }}</td>
+                                            <td>{{ $sdm->nokantor_pengembang }}</td>
+                                            <td>{{ $sdm->email_pengembang }}</td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="6" class="text-center">Belum ada data vendor</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     
                     <div class="tab-pane fade" id="staging1{{ $pengembangan->id }}" role="tabpanel"
                         aria-labelledby="staging1-tab">

@@ -36,6 +36,23 @@
                 @enderror
             </div>
 
+            <div class="form-group mt-3">
+                <div class="h-captcha" data-sitekey="{{ env('HCAPTCHA_SITEKEY') }}"></div>
+                @error('h-captcha-response')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                @if ($errors->has('h-captcha-response'))
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    {{ $errors->first('h-captcha-response') }}
+                </div>
+                @endif
+                {!! HCaptcha::display() !!}
+            </div>
+
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember"
@@ -60,8 +77,13 @@
             </div>
         </form>
     </div>
+            {!! HCaptcha::renderJs('en') !!}
 @endsection
 
+<<<<<<< HEAD
 @push('scripts')
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
 @endpush
+=======
+<script src="https://hcaptcha.com/1/api.js?hl=en" async defer></script>
+>>>>>>> b02e2d1f6f8b44b41b9c92108e8219b42c1e8da8

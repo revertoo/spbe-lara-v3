@@ -52,7 +52,7 @@
                                                             class="fas fa-handshake"></i></a>
                                                     {{-- end button sementara --}}
 
-                                                    @role('superadmin|admin-aplikasi|operator-aplikasi')
+                                                    @role('superadmin|admin-aplikasi|operator-aplikasi|viewer-aplikasi')
                                                         <a href="{{ route('admin.application.show', $application->id) }}"
                                                             class="btn btn-dark btn-sm" title="Detail"><i
                                                                 class="fas fa-eye"></i></a>

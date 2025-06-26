@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         // data aplikasi
         Route::resource('application', ApplicationController::class)
-            ->middleware('role:superadmin|admin-aplikasi|operator-aplikasi');
+            ->middleware('role:superadmin|admin-aplikasi|operator-aplikasi|viewer-aplikasi');
         // Route::resource('application/{application}/monevapp', MonevappController::class)
         //     ->middleware('role:superadmin|admin-aplikasi|operator-aplikasi');
         Route::resource('application/{application}/sdmteknic', SdmTechnicController::class)
@@ -77,7 +77,7 @@ Route::middleware(['auth'])->group(function () {
 
         // portal CMS
         Route::resource('subdomain', SubdomainController::class)
-            ->middleware('role:superadmin|admin-aplikasi|operator-aplikasi');
+            ->middleware('role:superadmin|admin-aplikasi|operator-aplikasi|viewer-aplikasi');
 
         // aplikasi desa
         Route::resource('appdesa', AppDesaController::class)

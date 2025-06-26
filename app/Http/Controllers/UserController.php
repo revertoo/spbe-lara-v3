@@ -111,11 +111,15 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        // dd($request);
         DB::transaction(function () use ($request, $user) {
             $validated = $request->validated();
 
-            $validated['password'] = bcrypt($validated['password']);
+            // Hanya hash dan update password jika diisi
+            if (!empty($validated['password'])) {
+                $validated['password'] = bcrypt($validated['password']);
+            } else {
+                unset($validated['password']); // Jangan update password
+            }
 
             $user->update($validated);
 

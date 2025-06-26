@@ -33,7 +33,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Action</th>
+                                            @role('superadmin|admin-aplikasi|operator-aplikasi')
+                                                <th>Action</th>
+                                            @endrole
                                             <th>URL</th>
                                             <th>Status</th>
                                             <th>Operator Teknis</th>
@@ -46,13 +48,11 @@
                                         @foreach ($subdomains as $subdomain)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>
-                                                    @role('superadmin|admin-aplikasi|operator-aplikasi')
+                                                @role('superadmin|admin-aplikasi')
+                                                    <td>
                                                         <a href="{{ route('admin.subdomain.edit', $subdomain->id) }}"
                                                             class="btn btn-light btn-sm" title="Edit"><i
                                                                 class="fas fa-edit"></i></a>
-                                                    @endrole
-                                                    @role('superadmin|admin-aplikasi')
                                                         <form action="{{ route('admin.subdomain.destroy', $subdomain->id) }}"
                                                             method="POST" style="display: inline-block;">
                                                             @csrf
@@ -60,8 +60,15 @@
                                                             <button type="submit" class="btn btn-light btn-sm show_confirm"
                                                                 title="Delete"><i class="fas fa-trash"></i></button>
                                                         </form>
-                                                    @endrole
-                                                </td>
+                                                    </td>
+                                                @endrole
+                                                @role('operator-aplikasi')
+                                                    <td>
+                                                        <a href="{{ route('admin.subdomain.edit', $subdomain->id) }}"
+                                                            class="btn btn-light btn-sm" title="Edit"><i
+                                                                class="fas fa-edit"></i></a>
+                                                    </td>
+                                                @endrole
                                                 <td><a href="{{ $subdomain->url }}"
                                                         target="_blank">{{ $subdomain->url }}</a></td>
                                                 <td>

@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             PengembanganSeeder::class,
             KeamananSeeder::class,
             DataSeeder::class,
+            SdmpengembangSeeder::class,
         ]);
     }
 }

@@ -58,4 +58,8 @@ class Pengembangan extends Model
     {
         return $this->belongsTo(Frameworkapp::class, 'frameworkapp_id');
     }
+    public function sdmpengembang()
+    {
+        return $this->hasMany(Sdmpengembang::class, 'pengembangan_id');
+    }
 }

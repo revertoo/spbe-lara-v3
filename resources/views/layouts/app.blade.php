@@ -71,8 +71,12 @@
     <!-- Additional JS (if any) -->
     @stack('scripts')
 
+<<<<<<< HEAD
     <!-- Modal Stack -->
     @stack('modals')
+=======
+    {{-- @stack('modals') --}}
+>>>>>>> b02e2d1f6f8b44b41b9c92108e8219b42c1e8da8
 </body>
 
 </html>

@@ -8,10 +8,10 @@
                 <a href="https://spbe.denpasarkota.go.id/">{{ env('APP_NAME') }}</a>
             </div>
             <ul class="sidebar-menu">
-                @role('superadmin|admin-aplikasi|admin-spbe')
+                @role('superadmin|admin-aplikasi|viewer-spbe|viewer-all')
                     <li class="menu-header">Dashboard</li>
                 @endrole
-                @role('superadmin|admin-aplikasi')
+                @role('superadmin|admin-aplikasi|viewer-aplikasi|viewer-all')
                     <li class="{{ Request::is('dashboard/aplikasi') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('dashboard.aplikasi') }}"><i
                                 class="fas fa-tachometer-alt"></i><span>Dashboard
@@ -25,7 +25,7 @@
                     </li>
                 @endrole
 
-                @role('superadmin|admin-aplikasi|operator-aplikasi')
+                @role('superadmin|admin-aplikasi|operator-aplikasi|viewer-aplikasi|viewer-all')
                     <li class="menu-header">Aplikasi</li>
                     <li class="{{ Request::is('admin/application*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.application.index') }}"><i class="fas fa-globe"></i><span>Data

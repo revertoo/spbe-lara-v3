@@ -12,7 +12,7 @@ class Sdmpengembang extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'application_id',
+        'pengembangan_id',
         'nama_pengembang',
         'alamat_pengembang',
         'nohp_pengembang',
